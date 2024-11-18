@@ -206,3 +206,20 @@ biologi_var = StringVar()
 fisika_var = StringVar()
 inggris_var = StringVar()
 selected_record_id = StringVar() #untuk menyimpan 10 recordyang dipilih
+
+#elemen gui
+Label(root, text="Nama Siswa").grid(row=0, column=0, padx=10, pady=5)
+Entry(root, textvariable=nama_var).grid(row=0, column=1, padx=10, pady=5)
+
+Label(root, text="Nilai Biologi").grid(row=1, column=0, padx=10, pady=5)
+Entry(root, textvariable=biologi_var).grid(row=1, column=1, padx=10, pady=5)
+
+Label(root, text="Nilai Fisika").grid(row=2, column=0, padx=10, pady=5)
+Entry(root, textvariable=fisika_var).grid(row=2, column=1, padx=10, pady=5)
+
+Label(root, text="Nilai Inggris").grid(row=3, column=0, padx=10, pady=5)
+Entry(root, textvariable=inggris_var).grid(row=3, column=1, padx=10, pady=5)
+
+Button(root, text="Add", command=submit).grid(row=4, column=0, pady=10)
+Button(root, text="Update", command=update).grid(row=4, column=1, pady=10)
+Button(root, text="Delete", command=delete).grid(row=4, column=2, pady=10)
