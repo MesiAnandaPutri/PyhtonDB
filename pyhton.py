@@ -223,3 +223,7 @@ Entry(root, textvariable=inggris_var).grid(row=3, column=1, padx=10, pady=5)
 Button(root, text="Add", command=submit).grid(row=4, column=0, pady=10)
 Button(root, text="Update", command=update).grid(row=4, column=1, pady=10)
 Button(root, text="Delete", command=delete).grid(row=4, column=2, pady=10)
+
+# Tabel untukk menampilkan data
+columns = ("id", "nama_siswa", "biologi", "fisika", "inggris", "prediksi_fakultas")
+tree = ttk.Treeview(root, columns=columns, show = 'headings')
