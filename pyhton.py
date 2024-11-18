@@ -18,4 +18,7 @@ def create_database():
     """)
     conn.commit() #Menyimpan perubahan yang telah dilakukan pd database
     conn.close() # menutup koneksi ke database
-   
+    
+#Fungsi untuk mengambil semua data dari database
+def fetch_data():
+    
