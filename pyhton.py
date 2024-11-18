@@ -88,4 +88,7 @@ def submit(): # fungsi ini akan berfungsi ketika tombol add ditekan
             inggris = int(inggris_var.get())
         except ValueError:
             raise ValueError("Nilai Biologi, Fisika, dan Inggris harus berupa angka.")
+        #memastikan nama tidak boleh kosong
+        if not nama:
+            raise Exception("Nama siswa tidak boleh kosong.")
        
