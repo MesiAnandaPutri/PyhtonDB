@@ -91,4 +91,19 @@ def submit(): # fungsi ini akan berfungsi ketika tombol add ditekan
         #memastikan nama tidak boleh kosong
         if not nama:
             raise Exception("Nama siswa tidak boleh kosong.")
-       
+        #untuk memastikan bahwa nilai tidak melebihi 100. Jika ya, maka ValueError akan dilempar 
+        # dengan pesan yang sesuai "Nilai tidak boleh lebih dari 100 dan kurang dari nol."
+        if biologi > 100 or fisika > 100 or inggris > 100:
+            raise ValueError("Nilai tidak boleh lebih dari 100.")
+        if biologi < 0 or fisika < 0 or inggris < 0:
+            raise ValueError("Nilai tidak boleh kurang dari 0.")
+        
+        prediksi = calculate_prediction(biologi, fisika, inggris)
+        save_to_database(nama, biologi, fisika, inggris, prediksi)
+        
+        messagebox.showinfo("Sukses", f"Data berhasil disimpan!\nPrediksi Fakultas: {prediksi}")
+        clear_input()
+        populate_table()
+    
+    except ValueError as e:
+        messagebox.showerror("Error", f"Kesalahan: {e}")
