@@ -235,3 +235,11 @@ for col in columns:
     tree.column(col, anchor='center')
 
 tree.grid(row=5, column=0, columnspan=3, padx=10, pady=10)
+
+# Event untuk memilih data dari tabel
+tree.bind('<ButtonRelease-1>', fill_inputs_from_table)
+
+
+populate_table()
+
+root.mainloop()
