@@ -79,4 +79,13 @@ def calculate_prediction(biologi, fisika, inggris):
     
 #Fungsi untuk menangani tombol submit
 def submit(): # fungsi ini akan berfungsi ketika tombol add ditekan
- 
+         #Saya menambahkan try-except khusus di dalam submit() untuk memastikan bahwa hanya huruf alih-alih angka) 
+    try: #yang ditangani dengan pesan error "Nilai Biologi, Fisika, dan Inggris harus berupa angka."
+        nama = nama_var.get()
+        try:
+            biologi = int(biologi_var.get())
+            fisika = int(fisika_var.get())
+            inggris = int(inggris_var.get())
+        except ValueError:
+            raise ValueError("Nilai Biologi, Fisika, dan Inggris harus berupa angka.")
+       
