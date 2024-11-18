@@ -227,3 +227,11 @@ Button(root, text="Delete", command=delete).grid(row=4, column=2, pady=10)
 # Tabel untukk menampilkan data
 columns = ("id", "nama_siswa", "biologi", "fisika", "inggris", "prediksi_fakultas")
 tree = ttk.Treeview(root, columns=columns, show = 'headings')
+
+# Menyesuaikan posisi teks di setiap kolom ke tengah
+# Mengatur posisi isi tabel di tengah
+for col in columns:
+    tree.heading(col, text=col.capitalize())
+    tree.column(col, anchor='center')
+
+tree.grid(row=5, column=0, columnspan=3, padx=10, pady=10)
