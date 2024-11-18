@@ -178,3 +178,17 @@ def populate_table(): # Setiap baris diambil dan ditampilkan dalam tabel menggun
         tree.delete(row)
     for row in fetch_data():
         tree.insert("", "end", values=row)
+
+#Fungsi untuk mengisi input dengan data dari tabel
+def fill_inputs_from_table(event): #Ini dipicu saat pengguna mengklik baris di tabel.
+    try:
+        selected_item = tree.selection()[0]
+        selected_row = tree.item(selected_item)['values']
+        
+        selected_record_id.set(selected_row[0])
+        nama_var.set(selected_row[1])  
+        biologi_var.set(selected_row[2])   
+        fisika_var.set(selected_row[3])   
+        inggris_var.set(selected_row[4])
+    except IndexError:
+        messagebox.showerror("Error", "Pilih data yang valid!")
