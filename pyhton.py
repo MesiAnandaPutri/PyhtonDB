@@ -76,4 +76,7 @@ def calculate_prediction(biologi, fisika, inggris):
     #Jika ada nilai yang sama atau tidak ada nilai yang lebih besar, maka fakultas yang diprediksi adalah "Tidak Diketahui".
     else:
         return "Tidak Diketahui"
+    
+#Fungsi untuk menangani tombol submit
+def submit(): # fungsi ini akan berfungsi ketika tombol add ditekan
  
