@@ -27,3 +27,16 @@ def fetch_data():
     rows = cursor.fetchall() #Mengambil semua baris hasil query dan menyimpannya dalam rows.
     conn.close()
     return rows
+
+#Fungsi untuk menyimpan data baru ke database
+def save_to_database(nama, biologi, fisika, inggris, prediksi):
+    conn = sqlite3.connect('nilai_siswa.db')
+    cursor = conn.cursor()
+    #Menjalankan query SQL untuk menyisipkan data ke dalam tabel.
+    cursor.execute('''
+        INSERT INTO nilai_siswa (nama_siswa, biologi, fisika, inggris, prediksi_fakultas)
+        VALUES (?, ?, ?, ?, ?)
+    ''', (nama, biologi, fisika, inggris, prediksi))
+    conn.commit()
+    conn.close()
+ 
