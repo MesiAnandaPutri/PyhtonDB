@@ -195,3 +195,7 @@ def fill_inputs_from_table(event): #Ini dipicu saat pengguna mengklik baris di t
         
 #inisialisasi database
 create_database()
+
+#membuat gui dengan tkinter
+root = Tk()
+root.title("Prediksi Fakultas Siswa")    
