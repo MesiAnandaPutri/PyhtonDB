@@ -52,3 +52,13 @@ def update_database(record_id, nama, biologi, fisika, inggris, prediksi):
     ''', (nama, biologi, fisika, inggris, prediksi, record_id))
     conn.commit()
     conn.close()
+    
+#Fungsi untuk menghapus data dari database
+def delete_database(record_id):
+    conn = sqlite3.connect('nilai_siswa.db')
+    cursor = conn.cursor()
+    #Menjalankan query SQL untuk menghapus data berdasarkan ID yang diberikan.
+    cursor.execute('DELETE FROM nilai_siswa WHERE id = ?', (record_id,))
+    conn.commit()
+    conn.close()
+ 
