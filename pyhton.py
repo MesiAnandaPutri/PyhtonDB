@@ -149,3 +149,17 @@ def update(): # Memastikan bahwa data yang dipilih ada di tabel, kemudian memper
         populate_table()
     except ValueError as e:
         messagebox.showerror("Error", f"Kesalahan: {e}")
+        
+#Fungsi untuk menangani tombol delete
+def delete(): #Memastikan bahwa data yang dipilih ada di tabel, kemudian menghapus data tersebut dari database.
+    try:
+        if not selected_record_id.get():
+            raise Exception("Pilih data dari tabel untuk dihapus!")
+        
+        record_id = int(selected_record_id.get())
+        delete_database(record_id)
+        messagebox.showinfo("Sukses", "Data berhasil dihapus!")
+        clear_input()
+        populate_table()
+    except ValueError as e:
+        messagebox.showerror("Error", f"Kesalahan: {e}")
