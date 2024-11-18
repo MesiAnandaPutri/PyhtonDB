@@ -61,4 +61,19 @@ def delete_database(record_id):
     cursor.execute('DELETE FROM nilai_siswa WHERE id = ?', (record_id,))
     conn.commit()
     conn.close()
+    
+#Fungsi untuk menghitung prediksi fakultas
+def calculate_prediction(biologi, fisika, inggris):
+    #Jika nilai Biologi lebih besar dari Fisika dan Inggris, maka fakultas yang diprediksi adalah "Kedokteran".
+    if biologi > fisika  and biologi > inggris:
+        return "Kedokteran"
+    #Jika nilai Fisika lebih besar, maka fakultas yang diprediksi adalah "Teknik".
+    elif fisika > biologi and fisika > inggris:
+        return "Teknik"
+    #Jika nilai Inggris lebih besar, maka fakultas yang diprediksi adalah "Bahasa".
+    elif inggris > biologi and inggris > fisika:
+        return "Bahasa"
+    #Jika ada nilai yang sama atau tidak ada nilai yang lebih besar, maka fakultas yang diprediksi adalah "Tidak Diketahui".
+    else:
+        return "Tidak Diketahui"
  
