@@ -192,3 +192,6 @@ def fill_inputs_from_table(event): #Ini dipicu saat pengguna mengklik baris di t
         inggris_var.set(selected_row[4])
     except IndexError:
         messagebox.showerror("Error", "Pilih data yang valid!")
+        
+#inisialisasi database
+create_database()
