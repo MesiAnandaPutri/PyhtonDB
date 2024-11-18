@@ -39,4 +39,16 @@ def save_to_database(nama, biologi, fisika, inggris, prediksi):
     ''', (nama, biologi, fisika, inggris, prediksi))
     conn.commit()
     conn.close()
- 
+    
+#Fungsi untuk memperbarui data di database
+def update_database(record_id, nama, biologi, fisika, inggris, prediksi):
+    conn = sqlite3.connect('nilai_siswa.db')
+    cursor = conn.cursor()
+    #Menjalankan query SQL untuk memperbarui nilai siswa pada kolom yang sesuai dengan ID yang diberikan.
+    cursor.execute('''
+        UPDATE nilai_siswa
+        SET nama_siswa = ?, biologi = ?, fisika = ?, inggris = ?, prediksi_fakultas = ?
+        WHERE id = ?
+    ''', (nama, biologi, fisika, inggris, prediksi, record_id))
+    conn.commit()
+    conn.close()
