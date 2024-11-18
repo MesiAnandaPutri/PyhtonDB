@@ -199,3 +199,10 @@ create_database()
 #membuat gui dengan tkinter
 root = Tk()
 root.title("Prediksi Fakultas Siswa")    
+
+#variabel tkinter
+nama_var = StringVar()
+biologi_var = StringVar()
+fisika_var = StringVar()
+inggris_var = StringVar()
+selected_record_id = StringVar() #untuk menyimpan 10 recordyang dipilih
