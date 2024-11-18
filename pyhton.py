@@ -107,3 +107,45 @@ def submit(): # fungsi ini akan berfungsi ketika tombol add ditekan
     
     except ValueError as e:
         messagebox.showerror("Error", f"Kesalahan: {e}")
+
+#   try:
+  #      nama = nama_var.get()
+   #     biologi = int(biologi_var.get())
+    #    fisika = int(fisika_var.get())
+     #   inggris = int(inggris_var.get())
+        
+      #  if not nama:
+       #     raise Exception("Nama siswa tidak boleh kosong.")
+        
+        #prediksi = calculate_prediction(biologi, fisika, inggris)
+        #save_to_database(nama, biologi, fisika, inggris, prediksi)
+        
+        #messagebox.showinfo("Sukses", f"Data berhasil disimpan!\nPrediksi Fakultas: {prediksi}")
+        #clear_input()
+        #populate_table()
+    #except ValueError:
+     #   messagebox.showerror("Error", "Nilai Biologi, Fisika, dan Inggris harus berupa angka.") 
+        
+#Fungsi untuk menangani tombol update
+def update(): # Memastikan bahwa data yang dipilih ada di tabel, kemudian memperbarui data tersebut di database.
+    try:
+        if not selected_record_id.get():
+            raise Exception("Pilih data dari tabel untuk di-update!")
+        
+        record_id = int(selected_record_id.get())
+        nama = nama_var.get()
+        biologi = int(biologi_var.get())
+        fisika = int(fisika_var.get())
+        inggris = int(inggris_var.get())
+        
+        if not nama: # menampilkan eror ketika nama kosong
+            raise ValueError("Nama siswa tidak boleh kosong.")
+        
+        prediksi = calculate_prediction(biologi, fisika, inggris)
+        update_database(record_id, nama, biologi, fisika, inggris, prediksi)
+        
+        messagebox.showinfo("Sukses", "Data berhasil diperbarui!") # menampilkan pesan ketika data berhasil diperbarui
+        clear_input()
+        populate_table()
+    except ValueError as e:
+        messagebox.showerror("Error", f"Kesalahan: {e}")
