@@ -171,4 +171,10 @@ def clear_input(): #Fungsi ini membersihkan semua inputan di form (nama siswa, n
     fisika_var.set("")
     inggris_var.set("")
     selected_record_id.set("") # selected_record_id = StringVar()  # Untuk menyimpan ID record yang dipilih
- 
+       
+#Fungsi untuk mengisi tabel dengan data dari database
+def populate_table(): # Setiap baris diambil dan ditampilkan dalam tabel menggunakan tree.insert().
+    for row in tree.get_children():
+        tree.delete(row)
+    for row in fetch_data():
+        tree.insert("", "end", values=row)
