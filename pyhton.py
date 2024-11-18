@@ -21,4 +21,9 @@ def create_database():
     
 #Fungsi untuk mengambil semua data dari database
 def fetch_data():
-    
+    conn = sqlite3.connect('nilai_siswa.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM nilai_siswa") #Menjanlankan perinah sql unt mengambil semua data dr tabel nilai_siswa
+    rows = cursor.fetchall() #Mengambil semua baris hasil query dan menyimpannya dalam rows.
+    conn.close()
+    return rows
