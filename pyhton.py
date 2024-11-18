@@ -163,3 +163,12 @@ def delete(): #Memastikan bahwa data yang dipilih ada di tabel, kemudian menghap
         populate_table()
     except ValueError as e:
         messagebox.showerror("Error", f"Kesalahan: {e}")
+        
+#Fungsi unruk mengosongkan input
+def clear_input(): #Fungsi ini membersihkan semua inputan di form (nama siswa, nilai-nilai mata pelajaran, dan ID yang dipilih).
+    nama_var.set("")
+    biologi_var.set("")
+    fisika_var.set("")
+    inggris_var.set("")
+    selected_record_id.set("") # selected_record_id = StringVar()  # Untuk menyimpan ID record yang dipilih
+ 
