@@ -16,4 +16,6 @@ def create_database():
             prediksi_fakultas TEXT
          )
     """)
-    
+    conn.commit() #Menyimpan perubahan yang telah dilakukan pd database
+    conn.close() # menutup koneksi ke database
+   
